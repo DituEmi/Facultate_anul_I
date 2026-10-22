@@ -1,0 +1,105 @@
+#  cod care scrie media aritmetica a 2 numere intregi, cu 3 zecimale ( am facut o sa verific ca stiu sa folosesc printf)
+#include <stdio.h>
+
+int main()
+{
+
+    int a, b;
+
+    scanf("%d %d", &a, &b);
+
+    float medie = (float)(a + b) / 2;
+
+    printf("Media a doua numere intregi %d si %d cu 3 zecimale este: %.3f \n", a, b, medie);
+
+    return 0;
+}
+
+
+
+
+# cod de la punctul D, sa fiu sigur ca stiu sa l fac ```merg astea in VSC?``` 
+# am facut doar partea cu for, imi e foarte clar cum se comuta intre diferite tipuri de loops
+
+#include <stdio.h>
+
+int main() {
+  int A, B;
+
+  scanf("%d %d", &A, &B);
+
+  for (int i = A; i <= B; i++) {
+    bool prim = true;
+    if (i == 1) {
+      prim = false;
+    } else if (i % 2 == 0 && i != 2) {
+      prim = false;
+    } else {
+      for (int j = 3; j * j <= i; j += 2) {
+        if (i % j == 0) {
+          prim = false;
+        }
+      }
+    }
+
+    if (prim == true) {
+      printf("%d ", i);
+    }
+  }
+
+  printf("\n");
+  return 0;
+}
+
+
+# fac codul de punctul I. teoretic imi e foarte clar cum ar trebui sa fac, dar vreau sa vad ca si stiu sa l fac efectiv 
+# a fost exact cum am asteptam 
+
+#include <stdio.h>
+
+int main() {
+  int A, B;
+
+  scanf("%d %d", &A, &B);
+  int i = A;
+
+primul_for:
+  if (i <= B) {
+
+    bool prim = true;
+
+    if (i == 1) {
+      prim = false;
+    } else if (i % 2 == 0 && i != 2) {
+      prim = false;
+    } else {
+      int j = 3;
+    al_doilea_for:
+
+      if (j * j <= i) {
+        if (i % j == 0) {
+          prim = false;
+        }
+
+        j += 2;
+        if (j * j <= i) {
+          goto al_doilea_for;
+        }
+      }
+    }
+
+    if (prim == true) {
+      printf("%d ", i);
+    }
+
+    i++;
+    if (i <= B) {
+      goto primul_for;
+    }
+
+    printf("\n");
+    return 0;
+  }
+}
+
+
