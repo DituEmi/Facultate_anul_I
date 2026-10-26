@@ -4,7 +4,7 @@ COMPILER = gcc
 SOURCE = main.c
 
 all:
-	gcc task1.c -o main
+	gcc main.c functii.c -o main
 
 run: all
 	./main
