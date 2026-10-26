@@ -4,7 +4,7 @@ COMPILER = gcc
 SOURCE = main.c
 
 all:
-	$(COMPILER) task2.c -o main
+	$(COMPILER) task5.c -o main -lm
 
 run: all
 	./main
