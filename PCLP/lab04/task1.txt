@@ -1,0 +1,12 @@
+#include "functii.h"
+
+int main() {
+
+  int v[100] = {0};
+  int n;
+
+  n = read_vector(v);
+  print_vector(n, v);
+
+    return 0;
+}
